@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0 auto;
+        width: 770px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>动态内容</h1>
+    <div id="news-container">这是一个容器</div>
+    <script>
+      const newsList = [
+        { title: "西北民族大学2024年普通本科及预科招生章程", date: "2024-05-17" },
+        { title: "关于西北民族大学航空服务艺术与管理专业艺术类统考科目的公告", date: "2023-11-29" },
+        { title: "西北民族大学2023年普通本科及预科招生章程", date: "2023-05-05" },
+      ];
+
+      function renderNewsList() {
+        const newsContainer = document.getElementById("news-container");
+        newsContainer.innerHTML = ""; // 清空原有内容
+
+        newsList.forEach((news) => {
+          const newsItem = document.createElement("div");
+          newsItem.className = "news-item";
+          newsItem.innerHTML = `
+            <h3>${news.title}</h3>
+            <p>发布日期：${news.date}</p>
+        `;
+          newsContainer.appendChild(newsItem);
+        });
+      }
+
+      renderNewsList();
+    </script>
+  </body>
+</html>

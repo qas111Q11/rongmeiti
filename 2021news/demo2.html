@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>左右布局页面</title>
+    <style>
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+      }
+
+      .container {
+        display: flex;
+        height: 100%;
+      }
+
+      .left-panel {
+        flex: 1;
+        background-color: #f4f4f4;
+        padding: 20px;
+      }
+
+      .right-panel {
+        flex: 2;
+        padding: 20px;
+        position: relative;
+      }
+
+      .right-panel img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      /* 添加一个类来控制文本的显示和隐藏 */
+      .text-overlay {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 20px;
+        color: #fff;
+        text-align: center;
+        white-space: nowrap;
+        pointer-events: none;
+        opacity: 0; /* 默认不显示 */
+        transition: opacity 0.5s; /* 过渡效果 */
+      }
+
+      .text-overlay.visible {
+        opacity: 1; /* 显示文本 */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="left-panel">
+        <input type="text" id="userText" placeholder="输入文字" />
+        <button onclick="updateText()">更新文字</button>
+      </div>
+      <div class="right-panel">
+        <img
+        src="https://vip-develop.dotesports.com/wp-content/uploads/2024/06/Wukong-black-myth.jpg?resize=300&#34;
+        alt="Wukong Image">
+        <!-- 移除内联样式，使用类控制 -->
+        <div id="textOverlay" class="text-overlay"></div>
+      </div>
+    </div>
+    <script>
+      function updateText() {
+        var userInput = document.getElementById("userText").value;
+        var textOverlay = document.getElementById("textOverlay");
+        if (userInput) {
+          textOverlay.classList.add("visible"); // 显示文本
+          textOverlay.innerHTML = userInput; // 更新文字
+        } else {
+          textOverlay.classList.remove("visible"); // 隐藏文本
+        }
+      }
+    </script>
+  </body>
+</html>

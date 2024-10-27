@@ -1,0 +1,243 @@
+{
+    "cells": [
+        {
+            "language": "typescript",
+            "source": [
+                "// 定义Deepseek 大模型调用函数\n\nimport OpenAI from \"openai\";\n\nconst openai = new OpenAI({\n  baseURL: \"https://api.deepseek.com\",\n  apiKey: \"sk-7737ca4e64cc4cd09f95fb742f2af5c1\",\n});\n\nasync function dsllm(message) {\n  const completion = await openai.chat.completions.create({\n    messages: [{ role: \"system\", content: message }],\n    model: \"deepseek-chat\",\n  });\n\n  return completion.choices[0].message.content\n}"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "console.log(await dsllm('hi'))"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "Hello! How can I assist you today?",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "// 使用dsllm，定义翻译汉译英函数\nasync function fy(text) {\n    提示词 = `\n    请扮演地道美国人，就我提供的内容<text>${text}</text>进行翻译。\n\n    要求:\n    1. 要有音标、要有例句\n    `\n    console.log(await dsllm(提示词))\n}"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "fy('异步')"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "**异步**  ",
+                                "*音标*: /ˈiː.sɪŋk/  ",
+                                "*例句*:  ",
+                                "1. \"Our project uses **asynchronous** programming to handle multiple tasks at once.\"  ",
+                                "   *翻译*: 我们的项目使用异步编程来同时处理多个任务。",
+                                "",
+                                "2. \"The **asynchronous** nature of the system allows for more efficient resource management.\"  ",
+                                "   *翻译*: 系统的异步特性使得资源管理更加高效。",
+                                "",
+                                "3. \"We need to ensure that the **asynchronous** calls are properly synchronized to avoid conflicts.\"  ",
+                                "   *翻译*: 我们需要确保异步调用得到适当的同步，以避免冲突。",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "提示词 = 'js中如何定义多行字符串，100字回答'\nconsole.log(await dsllm(提示词))"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "在JavaScript中，可以使用模板字符串（Template Literals）来定义多行字符串。模板字符串是用反引号（``）包裹的字符串，允许在其中直接换行，而不需要使用转义字符或拼接字符串。例如：",
+                                "",
+                                "```javascript",
+                                "const multiLineString = `",
+                                "  这是第一行",
+                                "  这是第二行",
+                                "  这是第三行",
+                                "`;",
+                                "",
+                                "console.log(multiLineString);",
+                                "```",
+                                "",
+                                "输出结果将是：",
+                                "",
+                                "```",
+                                "这是第一行",
+                                "这是第二行",
+                                "这是第三行",
+                                "```",
+                                "",
+                                "模板字符串不仅支持多行，还可以嵌入变量和表达式，使用 `${}` 语法。",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "| 修改前 | 修改后 |\n| --- | --- |\n| 你提供得代码来看 | 你提供的代码来看 |\n| 函数已经实现了更新文本的功能。但是，你提到用户输入地文本不能替换原有文本，这可能是由于一些细节问 | 函数已经实现了更新文本的功能。但是，你提到用户输入的文本不能替换原有文本，这可能是由于一些细节问题。 |\n| 以下是修改后的代码，其中我做了一些调整以确保文本可以正确更新： | 以下是修改后的代码，其中我做了一些调整以确保文本可以正确更新： |\n\n校对说明：\n1. \"你提供得代码来看\" 中的 \"得\" 应改为 \"的\"。\n2. \"用户输入地文本\" 中的 \"地\" 应改为 \"的\"。\n3. \"这可能是由于一些细节问\" 中的 \"问\" 应改为 \"问题\"。"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "| 修改前 | 修改后 |\n|--------|--------|\n| 推荐百度文哭下载 - AI自定义修改! | 推荐百度文库下载 - AI自定义修改！ |\n\n**修改说明:**\n- \"哭\" 应改为 \"库\"，以正确表达 \"百度文库\" 的意思。"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "\n\nconst fs = require('fs');\n\nfunction read(filename) {\n    try {\n        const data = fs.readFileSync(filename, 'utf8');\n        return data;\n    } catch (err) {\n        console.error(err);\n        return null;\n    }\n}\n\nconst text = read('test.txt');\nconsole.log(text);"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "你提供得代码来看，函数已经实现了更新文本的功能。但是，你提到用户输入地文本不能替换原有文本，这可能是由于一些细节问",
+                                "题。以下是修改后的代码，其中我做了一些调整以确保文本可以正确更新：",
+                                "",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "| 修改前 | 修改后 |\n| --- | --- |\n| 你提供得代码来看 | 你提供的代码来看 |\n| 函数已经实现了更新文本的功能。但是，你提到用户输入地文本不能替换原有文本，这可能是由于一些细节问 | 函数已经实现了更新文本的功能。但是，你提到用户输入的文本不能替换原有文本，这可能是由于一些细节问题。 |\n| 题。以下是修改后的代码，其中我做了一些调整以确保文本可以正确更新： | 以下是修改后的代码，其中我做了一些调整以确保文本可以正确更新： |"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "import {display} from 'node-kernel';\nasync function proofreadingTool(filename) {\n\n    const marked=require('marked');\n    let text=read(filename);\n    提示词=`\n    ## 角色\n\n    资深文字校对编辑\n\n    ### 流程：\n\n    1. 检查错别字；\n    2. 请检查所有标点符号是否使用正确，包括逗号、句号、引号、括号、冒号、分号等。请确保所有标点符号的位置和用法符合语法规则和表达习惯。\n    3. 检查其它规则：（1）大写中文年份中的【零】，应该为【〇】，例如【二零零四】，应为【二〇〇四】\n\n    ### 要求:\n\n    1. 使用表格的形式逐行输出检查结果，表头为修改前、修改后；\n    2. 一处错误，生成一行，不要将多个错误显示在一行；\n        \n    ### 任务\n    \n    think step by step，逐句校对如下文本内容：\n\n    <text>\n    ${text}\n    </text>\n    `;\n\n    // 你的 Markdown 文本\n    const markdownText=await dsllm(提示词));\n\n    // 将 Markdown 转换为 HTML\n    const html=marked.parse(markdownText);\n\n    display.html(html);\n}\n"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "proofreadingTool('test.txt')"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "text/html",
+                            "value": [
+                                "<style> table, th, tr { text-align: left; }</style><table>",
+                                "<thead>",
+                                "<tr>",
+                                "<th>修改前</th>",
+                                "<th>修改后</th>",
+                                "</tr>",
+                                "</thead>",
+                                "<tbody><tr>",
+                                "<td>你提供得代码来看，函数已经实现了更新文本的功能。</td>",
+                                "<td>你提供的代码来看，函数已经实现了更新文本的功能。</td>",
+                                "</tr>",
+                                "<tr>",
+                                "<td>但是，你提到用户输入地文本不能替换原有文本,这可能是由于一些细节问</td>",
+                                "<td>但是，你提到用户输入的文本不能替换原有文本，这可能是由于一些细节问题。</td>",
+                                "</tr>",
+                                "<tr>",
+                                "<td>二零二四年</td>",
+                                "<td>二〇二四年</td>",
+                                "</tr>",
+                                "</tbody></table>",
+                                ""
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS布局练习</title>
+    <style>
+      div a {
+        display: block;
+        width: 100px;
+      }
+      body {
+        margin: 0 auto;
+        width: 90%;
+      }
+      .pos-relative {
+        position: relative;
+        top: 100px;
+      }
+      .pos-abs {
+        position: absolute;
+        top: 100px;
+      }
+      .pos p {
+        border: 1px red solid;
+      }
+      .pos {
+        margin-bottom: 150px;
+        border-bottom: 1px dashed gray;
+      }
+      .relative {
+        position: relative;
+        position:
+      }
+    </style>
+  </head>
+  <body>
+    <h1>CSS布局练习</h1>
+    <h2>设定信息流显示方式：display</h2>
+    <a href="demo2.html">作业1效果</a>
+    <a href="作业1对话.md">作业1对话过程</a>
+    <p>
+      display可以改变元素的显示方式，如将行内元素a的显示方式由默认的inline改变为其它设定的值
+    </p>
+    <div>
+      <a href="demo2.html">作业1效果</a>
+      <a href="作业1对话.md">作业1对话过程</a>
+    </div>
+    <h2>相对定位与绝对定位</h2>
+    <div class="pos">
+      <p>段落1</p>
+      <p>段落2</p>
+      <p>段落3</p>
+    </div>
+    <div class="pos">
+      <p>段落1</p>
+      <p class="pos-relative">段落2</p>
+      <p>段落3</p>
+    </div>
+    <div class="pos relative">
+      <p>段落1</p>
+      <p class="pos-abs">段落2</p>
+      <p>段落3</p>
+    </div>
+  </body>
+</html>

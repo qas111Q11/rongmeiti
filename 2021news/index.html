@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>乔鑫期末作业</title>
+    <style>
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        font-family: "Helvetica Neue", Helvetica, Arial, "pingfang sc",
+          "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", STHeiti, SimSun,
+          sans-serif;
+      }
+
+      #video-background {
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        min-width: 100%;
+        min-height: 100%;
+        width: auto;
+        height: auto;
+        z-index: -2;
+      }
+
+      .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5); /* 半透明的黑色层 */
+        z-index: -1;
+      }
+
+      .content-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        /* 修改定位方式 */
+        position: relative;
+        margin: 50px auto;
+        width: 100%;
+        max-width: 1200px;
+        gap: 20px;
+        padding: 0 20px;
+        /* 添加最小高度确保内容可见 */
+        min-height: 100vh;
+      }
+
+      .content {
+        width: 250px; /* 固定宽度 */
+        text-align: center;
+        color: white;
+        background: rgba(0, 0, 0, 0.5);
+        padding: 20px;
+        border-radius: 10px;
+        transition: transform 0.3s ease, background 0.3s ease;
+        margin: 10px;
+      }
+
+      .content-output {
+        width: 520px; /* 其他content的两倍宽度 */
+        text-align: left;
+        color: white;
+        background: rgba(0, 0, 0, 0.7); /* 更深的背景色 */
+        padding: 30px;
+        border-radius: 15px;
+        transition: transform 0.3s ease;
+        margin: 10px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      }
+      .content:hover {
+        transform: scale(1.05); /* 鼠标悬停时放大卡片 */
+        background: rgba(0, 0, 0, 0.7); /* 鼠标悬停时加深背景颜色 */
+      }
+
+      h1 {
+        font-size: 2em; /* 降低标题文字大小 */
+        margin: 0;
+      }
+
+      p {
+        font-size: 1em; /* 降低段落文字大小 */
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      /* 响应式布局 */
+      @media screen and (max-width: 768px) {
+        .content {
+          width: 200px;
+        }
+        .content-output {
+          width: 420px;
+        }
+      }
+
+      @media screen and (max-width: 480px) {
+        .content, .content-output {
+          width: 100%;
+          margin: 10px 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <video autoplay muted loop id="video-background">
+      <source
+        src="https://prod-streaming-video-msn-com.akamaized.net/178161a4-26a5-4f84-96d3-6acea1909a06/2213bcd0-7d15-4da0-a619-e32d522572c0.mp4"
+        type="video/mp4"
+      />
+      Your browser does not support the video tag.
+    </video>
+
+    <div class="overlay"></div>
+
+    <div class="content-container">
+      <a target="_blank">
+        <div class="content" id="content1">
+          <h1>新闻长度识别</h1>
+          <p>输入一段新闻，系统将自动识别其长度。</p>
+        </div>
+      </a>
+      <a href="07-dom-dy.html" target="_blank">
+        <div class="content">
+          <h1>动态内容</h1>
+          <p>西北民族大学招生信息</p>
+        </div>
+      </a>
+      <a target="_blank">
+        <div class="content" id="content3">
+          <h1>人员类实例</h1>
+          <p>{张三}.</p>
+        </div>
+      </a>
+      <a target="_blank">
+        <div class="content" id="content4">
+          <h1>人员类2</h1>
+          <p>new Person("李四").</p>
+        </div>
+      </a>
+      <a target="_blank">
+        <div class="content" id="content5">
+          <h1>AI作诗</h1>
+          <p>输入主题，系统将自动生成一首古诗。需要耐心等待30秒左右...</p>
+        </div>
+      </a>
+      <a target="_blank">
+        <div class="content" id="content6">
+          <h1>内容精简</h1>
+          <p>内容将精简为50字以内.</p>
+        </div>
+      </a>
+      <a target="_blank">
+        <div class="content" id="content7">
+          <h1>小红书文案生成器</h1>
+          <p>需要耐心等待一分钟左右...</p>
+        </div>
+      </a>
+
+      <div class="content-output">
+        <h1>AI生成内容</h1>
+        <p id="outputText">这里将显示生成的内容...</p>
+      </div>
+    </div>
+
+    <script src="07-js-fun.js"></script>
+    <script src="07-js-o2.js"></script>
+    <script src="07-js-object.js"></script>
+    <script src="dsapi.js"></script>
+    <script src="dsapi2.js"></script>
+    <script src="func2.js"></script>
+    
+    <script>
+      // Optional: Add any JavaScript functionality here
+      document.addEventListener("DOMContentLoaded", function () {
+        console.log("Page loaded and video is playing.");
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS选择符优先级演示</title>
+    <style>
+      /* 元素选择符 */
+      p {
+        color: #3c4043;
+      }
+      /* 元素选择符+类选择符 */
+      p.red {
+        color: blue;
+      }
+      /* 类选择符 */
+      .red {
+        color: red;
+      }
+      .center {
+        text-align: center;
+      }
+      /* ID选择符 */
+      #demo {
+        color: brown;
+      }
+    </style>
+  </head>
+  <body>
+    <p>CSS选择符优先级演示</p>
+    <p class="red center">CSS选择符优先级演示</p>
+    <p class="red" id="demo">CSS选择符优先级演示</p>
+    <p>CSS选择符优先级演示</p>
+    <p>CSS选择符优先级演示</p>
+    <p>CSS选择符优先级演示</p>
+  </body>
+</html>

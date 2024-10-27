@@ -1,0 +1,35 @@
+{
+    "cells": [
+        {
+            "language": "typescript",
+            "source": [
+                "// 导入必要的包\nconst { display, Markdown } = require('./node_modules/@jupyter-widgets/base');"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.error",
+                            "value": {
+                                "name": "Error",
+                                "message": "Cannot find module './node_modules/@jupyter-widgets/base'\nRequire stack:\n- <repl>",
+                                "stack": "    at Function.Module._resolveFilename (node:internal/modules/cjs/loader:1225:15)\n    at Function.Module._resolveFilename.sharedData.moduleResolveFilenameHook.installedValue [as _resolveFilename] (c:\\Users\\Administrator\\.vscode\\extensions\\donjayamanne.typescript-notebook-2.0.6\\resources\\scripts\\node_modules\\@cspotcode\\source-map-support\\source-map-support.js:679:30)\n    at Function.Module._load (node:internal/modules/cjs/loader:1051:27)\n    at Function._._load (c:\\Users\\Administrator\\.vscode\\extensions\\donjayamanne.typescript-notebook-2.0.6\\out\\extension\\server\\index.js:2:115372)\n    at Module.require (node:internal/modules/cjs/loader:1311:19)\n    at require (node:internal/modules/helpers:179:18)\n    at <Cell 1> [2, 0]\n    at <Cell 1> [4, 46]\n    at Script.runInContext (node:vm:149:12)\n    at Script.runInNewContext (node:vm:154:17)"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

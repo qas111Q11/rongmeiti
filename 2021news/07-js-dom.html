@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS Dom 练习</title>
+    <style>
+      .red {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="header">JS Dom 练习</h1>
+    <p id="demo">段落内容</p>
+    <p>学习是循序渐进的过程</p>
+    <script>
+      let content = document.getElementById("demo");
+      console.log(content);
+      console.log(content.textContent);
+      content.textContent = "这是由js生成的内容";
+      content.classList.add("red");
+
+      let header = document.getElementById("header");
+      console.log(header);
+      header.style.textAlign = "center";
+      header.style.fontSize = "100px";
+    </script>
+  </body>
+</html>

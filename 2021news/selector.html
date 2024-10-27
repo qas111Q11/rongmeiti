@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS选择符练习</title>
+    <style>
+      /* 元素选择符 */
+      body {
+        background-color: #fff;
+      }
+      /* 类选择符 */
+      .red {
+        color: red;
+      }
+      /* ID 选择符 */
+      #headline {
+        color: brown;
+      }
+      /* 后代选择符 */
+      footer p a {
+        color: brown;
+      }
+      /* 兄弟选择符 */
+      a + a {
+        color: rgba(255, 0, 102, 0.557);
+      }
+      /* 组合选择符 */
+      h1,
+      h2,
+      h3,
+      h4 {
+        font-family: "仿宋";
+      }
+      /* 伪类选择符 */
+      a:hover {
+        color: purple;
+      }
+      a:visited {
+        color: aliceblue;
+      }
+      /* 伪元素选择符 */
+      h1::before {
+        content: "第一章";
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- CSS选择符的组合 -->
+    <h1>融媒体作品开发与制作</h1>
+    <h2>二级标题</h2>
+    <h3>三级标题</h3>
+    <h4>四级标题</h4>
+
+    <a href="demo2.html">作业1效果</a>
+    <a href="作业1对话.md">作业1对话过程</a>
+    <a href="作业1对话.md">作业1对话过程</a>
+    <hr />
+    <footer>
+      <p>
+        学号：pxxxxxxxxxx
+        <a href="https://www.xbmu.edu.cn">www.xbmu.edu.cn</a>
+      </p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>title是重要的元素</title>
+    <style>
+      .container {
+        position: relative; /* 添加此行 */
+        max-width: 600px;
+        margin: auto;
+      }
+      #image {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+      #text-input {
+        margin-top: 10px;
+        width: calc(100% - 22px);
+        padding: 10px;
+      }
+      button {
+        margin-top: 10px;
+        padding: 10px 20px;
+        cursor: pointer;
+      }
+      #text-container {
+        position: absolute;
+        bottom: 0; /* 相对于.container定位 */
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: rgba(0, 0, 0, 0.5);
+        color: white;
+        padding: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>一级标题</h1>
+      <h2>二级标题</h2>
+      <img id="image" src="wukong2.jpg" alt="图片的说明性替代文字" />
+      <input type="text" id="text-input" placeholder="输入文字" />
+      <button onclick="displayTextOnImage()">显示文字</button>
+      <div id="text-container">dffffff</div>
+    </div>
+
+    <script>
+      function displayTextOnImage() {
+        var textInput = document.getElementById("text-input").value;
+        var textContainer = document.getElementById("text-container");
+
+        // 清除之前的文本
+        textContainer.textContent = "";
+
+        // 如果用户输入了文本，则显示它
+        if (textInput) {
+          textContainer.textContent = textInput;
+        }
+      }
+    </script>
+  </body>
+</html>
